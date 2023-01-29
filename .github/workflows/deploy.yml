@@ -22,7 +22,4 @@ jobs:
         EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
 
     - name: docker build
-      run: 'sudo docker build . -t pomodoro-api'
-
-    - name: docker run
-      run: 'sudo docker run -p 53050:53050 -d pomodoro-api'
+      run: 'sudo docker compose up -d'
