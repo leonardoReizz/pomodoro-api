@@ -18,5 +18,5 @@ jobs:
         SOURCE: "./"
         REMOTE_HOST: "ec2-54-233-166-196.sa-east-1.compute.amazonaws.com"
         REMOTE_USER: "ubuntu"
-        TARGET: "/home/ec2-user"
+        TARGET: "/home/ubuntu"
         EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
