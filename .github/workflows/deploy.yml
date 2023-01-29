@@ -22,4 +22,4 @@ jobs:
         EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
 
     - name: docker build
-      run: 'sudo docker compose -f "docker-compose.yml" up -d --build'
+      run: "sudo docker compose -f 'docker-compose.yml' up -d --build"
