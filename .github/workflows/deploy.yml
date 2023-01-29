@@ -21,8 +21,8 @@ jobs:
         TARGET: "/home/ubuntu/pomodoro-api"
         EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
 
-    - name: Install Package
-      run: 'yarn'
+    - name: docker build
+      run: 'sudo docker container build -t pomodoro-api'
 
-    - name: Start Project
-      run: 'yarn start'
+    - name: docker run
+      run: 'sudo docker run -p 53050:53050' -d pomodoro-api
