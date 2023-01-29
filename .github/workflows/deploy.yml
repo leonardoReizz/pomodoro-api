@@ -25,4 +25,4 @@ jobs:
       run: 'sudo docker container build -t pomodoro-api'
 
     - name: docker run
-      run: 'sudo docker run -p 53050:53050' -d pomodoro-api
+      run: 'sudo docker run -p 53050:53050' -d pomodoro-api'
