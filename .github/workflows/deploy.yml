@@ -25,6 +25,9 @@ jobs:
       id: increment-git-tag
       run: |
         bash ./build/git_update.sh -v major
+        
+    - name: echp
+      run: "echo ${{ steps.login-ecr.outputs.registry }}"
     - name: Build, Tag, and Push the Image to Amazon ECR
       id: build-image
       env:
