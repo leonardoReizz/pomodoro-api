@@ -20,3 +20,7 @@ jobs:
         REMOTE_USER: "ubuntu"
         TARGET: "/home/ubuntu/pomodoro-api"
         EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
+
+    steps:
+      - name: List home directory
+        run: ssh ec2 'ls -la'
