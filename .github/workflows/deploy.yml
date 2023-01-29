@@ -31,7 +31,7 @@ jobs:
     - name: Build, Tag, and Push the Image to Amazon ECR
       id: build-image
       env:
-        ECR_REGISTRY: "099108868966.dkr.ecr.sa-east-1.amazonaws.com"
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: lesson-086
         IMAGE_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
       run: |
