@@ -6,7 +6,6 @@ import {
   Param,
   Post,
   Res,
-  UnauthorizedException,
 } from '@nestjs/common';
 import md5 from 'md5';
 import { User } from './user.entity';
