@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
@@ -27,7 +27,12 @@ export class UserService {
     return this.userRepository.findOne({ where: { id } });
   }
 
-  createUser(user: User): Promise<User> {
-    return this.userRepository.save(user);
+  async createUser(user: User): Promise<User> {
+    return this.userRepository.save(user).catch((e) => {
+      if (e.sqlMessage.includes('Duplicate entry')) {
+        throw new BadRequestException('Account with this email already exists');
+      }
+      return e;
+    });
   }
 }

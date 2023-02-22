@@ -1,7 +1,8 @@
 import { IsEmail, IsNotEmpty } from 'class-validator';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
+@Index(['email'], { unique: true })
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -16,7 +17,7 @@ export class User {
 
   @IsNotEmpty()
   @IsEmail()
-  @Column('text')
+  @Column({ unique: true })
   email: string;
 
   @IsNotEmpty()
